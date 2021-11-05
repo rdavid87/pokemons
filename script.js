@@ -24,15 +24,6 @@ function showLoadingSkeleton(name, order) {
     elemento.classList.add("nombre-skill-loader");
   });
 
-  const nombre = document.querySelector(`#nombre-pokemon-${order}`);
-  nombre.classList.add("nombre-skill-loader");
-
-  const nombreSkill = document.querySelector(`#nombre-skill-${order}`);
-  nombreSkill.classList.add("nombre-skill-loader");
-
-  const nombreStatsHp = document.querySelector(`#nombre-stats-hp-${order}`);
-  nombreStatsHp.classList.add("nombre-skill-loader");
-
   const contenedorBarra= document.querySelectorAll(".contenedor-barra");
   contenedorBarra.forEach((contenedor) => {
     contenedor.classList.add("contenedor-barra-sin-border");
@@ -116,15 +107,6 @@ function quitarSkeleton(name, order) {
   texto.forEach((elemento) => {
     elemento.classList.remove("nombre-skill-loader");
   });
-
-  const nombre = document.querySelector(`#nombre-pokemon-${order}`);
-  nombre.classList.remove("nombre-skill-loader");
-
-  const nombreSkill = document.querySelector(`#nombre-skill-${order}`);
-  nombreSkill.classList.remove("nombre-skill-loader");
-
-  const nombreStatsHp = document.querySelector(`#nombre-stats-hp-${order}`);
-  nombreStatsHp.classList.remove("nombre-skill-loader");
 
   const barraHp = document.querySelector(`#barra-hp-${order}`);
   barraHp.classList.remove("gris");
