@@ -21,8 +21,8 @@ function createPokemonCard(pokemon, order) {
     />
     <div class="card-body">
       <h5 class="card-title" id="nombre-pokemon-${order}">${pokemon.toUpperCase()}</h5>
-      <p class="card-text">Skills</p>
-      <span>HP</>
+      <p class="card-text" id="nombre-skill-${order}">Skills</p>
+      <span id="nombre-stats-hp-${order}">HP</span>
       <div class="contenedor-barra">
         <div id="barra-hp-${order}"></div>
         <span id="cantidad-hp-${order}"></span>

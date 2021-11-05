@@ -70,6 +70,10 @@ header img {
   border-radius: 20px 0px 0px 20px;
 }
 
+.contenedor-barra-sin-border{
+  border: 0px solid gray !important;
+} 
+
 .verde {
   background-color: lightgreen;
   height: 100%;
@@ -85,12 +89,18 @@ header img {
   background-color: yellow;
 }
 
+.gris {
+  height: 100%;
+  background-color: gray;
+  animation: animacionDeCarga 2s infinite;
+}
+
 .imagen-loader {
   max-width: 80px;
   height: 80px;
   border-radius: 50%;
   animation: animacionDeCarga 2s infinite;
-  padding: 2rem;
+  padding: 4rem;
   margin: 2rem auto;
   margin-top: 2.2rem;
 }
@@ -107,12 +117,11 @@ header img {
 .texto-card-loader {
   animation: animacionDeCarga 2s infinite;
   padding: 0.8rem;
+  margin: 0.2rem;
 }
 .nombre-skill-loader {
   animation: animacionDeCarga 2s infinite;
-  padding: 0.5rem;
-  width: 60px;
-  display: block;
+  color: transparent;
 }
 
 .contenedor-barra-loader {
@@ -124,7 +133,7 @@ header img {
 }
 
 .oculto {
-  display: none;
+  color: transparent;
 }
 
 @keyframes animacionDeCarga {

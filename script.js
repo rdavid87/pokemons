@@ -19,9 +19,43 @@ function showLoadingSkeleton(name, order) {
   imagen.src = "./assets/sinimagen.png";
   imagen.classList.add("imagen-loader");
 
+  const texto = document.querySelectorAll(".card-body span");
+  texto.forEach((elemento) => {
+    elemento.classList.add("nombre-skill-loader");
+  });
+
   const nombre = document.querySelector(`#nombre-pokemon-${order}`);
-  nombre.textContent = "";
   nombre.classList.add("nombre-skill-loader");
+
+  const nombreSkill = document.querySelector(`#nombre-skill-${order}`);
+  nombreSkill.classList.add("nombre-skill-loader");
+
+  const nombreStatsHp = document.querySelector(`#nombre-stats-hp-${order}`);
+  nombreStatsHp.classList.add("nombre-skill-loader");
+
+  const contenedorBarra= document.querySelectorAll(".contenedor-barra");
+  contenedorBarra.forEach((contenedor) => {
+    contenedor.classList.add("contenedor-barra-sin-border");
+  });
+
+
+  const barraHp = document.querySelector(`#barra-hp-${order}`);
+  barraHp.style.width = "100%";
+  barraHp.classList.add("gris");
+
+  const barraAtaque = document.querySelector(`#barra-ataque-${order}`);
+  barraAtaque.style.width = "100%";
+  barraAtaque.classList.add("gris");
+
+  const barraDefensa = document.querySelector(`#barra-defensa-${order}`);
+  barraDefensa.style.width = "100%";
+  barraDefensa.classList.add("gris");
+
+  const barraVelocidad = document.querySelector(`#barra-velocidad-${order}`);
+  barraVelocidad.style.width = "100%";
+  barraVelocidad.classList.add("gris");
+
+
 
 }
 
@@ -30,13 +64,18 @@ async function fillPokemonData(name, order) {
   // QUE USARÁS PARA COMPLETAR LAS ACTIVIDADES
   const pokemonData = await getPokemonData(name);
 
+  console.log(pokemonData);
+
   // EL SIGUIENTE CODIGO RENDERIZARÁ LAS CARDS DE LOS POKEMONS, UNA VEZ OBTENIDA
   // LA INFORMACION DEL SERVIDOR.
   const imagen = document.querySelector(`#imagen-pokemon-${order}`);
   imagen.src = pokemonData.imagen;
 
   const nombre = document.querySelector(`#nombre-pokemon-${order}`);
-  nombre.textContent = name;
+
+  const nombreSkill = document.querySelector(`#nombre-skill-${order}`);
+
+  const nombreStatsHp = document.querySelector(`#nombre-stats-hp-${order}`);
 
   pokemonData.stats.forEach((stat) => {
     const barra = document.querySelector(`#barra-${stat.name}-${order}`);
@@ -73,6 +112,36 @@ function quitarSkeleton(name, order) {
   const imagen = document.querySelector(`#imagen-pokemon-${order}`);
   imagen.classList.remove("imagen-loader");
 
+  const texto = document.querySelectorAll(".card-body span");
+  texto.forEach((elemento) => {
+    elemento.classList.remove("nombre-skill-loader");
+  });
+
   const nombre = document.querySelector(`#nombre-pokemon-${order}`);
   nombre.classList.remove("nombre-skill-loader");
+
+  const nombreSkill = document.querySelector(`#nombre-skill-${order}`);
+  nombreSkill.classList.remove("nombre-skill-loader");
+
+  const nombreStatsHp = document.querySelector(`#nombre-stats-hp-${order}`);
+  nombreStatsHp.classList.remove("nombre-skill-loader");
+
+  const barraHp = document.querySelector(`#barra-hp-${order}`);
+  barraHp.classList.remove("gris");
+
+  const barraAtaque = document.querySelector(`#barra-ataque-${order}`);
+  barraAtaque.classList.remove("gris");
+
+  const barraDefensa = document.querySelector(`#barra-defensa-${order}`);
+  barraDefensa.classList.remove("gris");
+
+  const barraVelocidad = document.querySelector(`#barra-velocidad-${order}`);
+  barraVelocidad.classList.remove("gris");
+
+  const contenedorBarra= document.querySelectorAll(".contenedor-barra");
+  contenedorBarra.forEach((contenedor) => {
+    contenedor.classList.remove("contenedor-barra-sin-border");
+  });
+
+  
 }
